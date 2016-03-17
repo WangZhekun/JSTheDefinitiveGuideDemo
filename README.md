@@ -25,3 +25,7 @@ When the command line does not specify what to push with <refspec>... arguments 
 ###<repository>
 The "remote" repository that is destination of a push operation. This parameter can be either a URL (see the section GIT URLS below) or the name of a remote (see the section REMOTES below).
 
+#git学习
+## http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137628548491051ccfaef0ccb470894c858999603fedf000
+
+
