@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2016/3/31.
- * 返回一个继承指定参数的对象
- * 参数为null、非对象或非function时抛TypeError异常
+ * 杩斿洖涓�涓户鎵胯嚜鍘熷瀷瀵硅薄p鐨勫睘鎬х殑瀵硅薄
  */
 function inherit(p) {
     if(p == null) throw TypeError();

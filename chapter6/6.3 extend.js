@@ -1,21 +1,20 @@
 /**
- * Created by Administrator on 2016/3/31.
- * ¸øObject.prototypeÌí¼ÓÒ»¸ö²»¿ÉÃ¶¾ÙµÄextend()·½·¨
- * Õâ¸ö·½·¨¼Ì³Ð×Ôµ÷ÓÃËüµÄ¶ÔÏó,½«×÷Îª²ÎÊý´«ÈëµÄ¶ÔÏóµÄÊôÐÔÒ»Ò»¸´ÖÆ
- * ³ýÁËÖµÒÔÍâ,Ò²¸´ÖÆÊôÐÔµÄÌØÐÔ,³ý·ÇÔÚÄ¿±ê¶ÔÏóÖÐ´æÔÚÍ¬ÃûµÄÊôÐÔ
- * ²ÎÊý¶ÔÏóµÄËùÓÐ×ÔÓÐ¶ÔÏó(°üÀ¨²»¿ÉÃ¶¾ÙµÄÊôÐÔ)Ò²»áÒ»Ò»¸´ÖÆ
+ * ç»™Object.prototypeæ·»åŠ ä¸€ä¸ªä¸å¯æžšä¸¾çš„extend()æ–¹æ³•
+ * è¿™ä¸ªæ–¹æ³•ç»§æ‰¿è‡ªè°ƒç”¨å®ƒçš„å¯¹è±¡ï¼Œå°†ä½œä¸ºå‚æ•°ä¼ å…¥çš„å¯¹è±¡çš„å±žæ€§ä¸€ä¸€å¤åˆ¶
+ * é™¤å€¼ä¹‹å¤–ï¼Œè¿˜å¤åˆ¶ç‰¹æ€§ï¼Œé™¤éžthisä¸­æœ‰åŒåå±žæ€§
+ * å‚æ•°å¯¹è±¡çš„æ‰€æœ‰è‡ªæœ‰å±žæ€§ï¼ˆåŒ…æ‹¬ä¸å¯æžšä¸¾å±žæ€§ï¼‰éƒ½ä¼šè¢«ä¸€ä¸€å¤åˆ¶
  */
 Object.defineProperty(Object.prototype, 'extend', {
     writable: true,
     enumerable: false,
     configurable: true,
     value: function (o) {
-        var props = Object.getOwnPropertyNames(o);
+        var props = Object.getOwnPropertyNames(o); // èŽ·å¾—æ‰€æœ‰è‡ªæœ‰å±žæ€§ï¼ŒåŒ…æ‹¬ä¸å¯æžšä¸¾å±žæ€§
 
         for (var i = 0, len = props.length; i < len; i++) {
             if (props[i] in this) continue;
-            var desc = Object.getOwnPropertyDescriptor(o, props[i]); // »ñÈ¡ÃèÊö·û
-            Object.defineProperty(this, props[i], desc); // ¸øthis´´½¨Ò»¸öÊôÐÔ
+            var desc = Object.getOwnPropertyDescriptor(o, props[i]); // èŽ·å¾—oä¸­çš„å±žæ€§çš„æè¿°ç¬¦
+            Object.defineProperty(this, props[i], desc); // ç»™thisåˆ›å»ºä¸€ä¸ªå±žæ€§
         }
     }
 })

@@ -1,9 +1,8 @@
 /**
  * Created by Administrator on 2016/3/31.
- * ½«pÖÐµÄ¿ÉÃ¶¾ÙÊôÐÔ¸´ÖÆµ½oÖÐ,²¢·µ»Øo
- * Èç¹ûoºÍpÓÐÍ¬ÃûÊôÐÔ,ÄÇÃ´¸²¸ÇoÖÐµÄÍ¬ÃûÊôÐÔ
- * ¸Ãº¯Êý²»´¦ÀígetterºÍsetter,ÒÔ¼°ÊôÐÔµÄ¸´ÖÆ(ÊôÐÔµÄÖµÊÇ¶ÔÏóÊ±,ÎªÇ³¿½±´)
- * ºÏ¼¯
+ * æŠŠpä¸­çš„å¯æžšä¸¾å±žæ€§å¤åˆ¶åˆ°oä¸­ï¼Œå¹¶è¿”å›žo
+ * å¦‚æžœoä¸­æœ‰åŒåå±žæ€§ï¼Œåˆ™è¦†ç›–ä¹‹
+ * è¿™ä¸ªå‡½æ•°å¹¶ä¸å¤„ç†getterå’Œsetterä»¥åŠå¤åˆ¶å±žæ€§
  */
 function extend(o, p) {
     for(var prop in p) {
@@ -13,10 +12,9 @@ function extend(o, p) {
 }
 
 /**
- * ½«pÖÐµÄ¿ÉÃ¶¾ÙÊôÐÔ¸´ÖÆµ½oÖÐ,²¢·µ»Øo
- * Èç¹ûoºÍpÓÐÍ¬ÃûÊôÐÔ,ÄÇÃ´²»¸²¸ÇoÖÐµÄÍ¬ÃûÊôÐÔ
- * ¸Ãº¯Êý²»´¦ÀígetterºÍsetter,ÒÔ¼°ÊôÐÔµÄ¸´ÖÆ(ÊôÐÔµÄÖµÊÇ¶ÔÏóÊ±,ÎªÇ³¿½±´)
- * ºÏ¼¯
+ * æŠŠpä¸­çš„å¯æžšä¸¾å±žæ€§å¤åˆ¶åˆ°oä¸­ï¼Œå¹¶è¿”å›žo
+ * å¦‚æžœoä¸­æœ‰åŒåå±žæ€§ï¼Œoä¸­çš„å±žæ€§ä¸å—å½±å“
+ * è¿™ä¸ªå‡½æ•°å¹¶ä¸å¤„ç†getterå’Œsetterä»¥åŠå¤åˆ¶å±žæ€§
  * */
 function merge(o, p) {
     for(var prop in p) {
@@ -27,8 +25,7 @@ function merge(o, p) {
 }
 
 /**
- * Èç¹ûoÖÐµÄÊôÐÔÔÚpÖÐÃ»ÓÐÍ¬ÃûÊôÐÔ,ÔòÉ¾³ý¸ÃÊôÐÔ,²¢·µ»Øo
- * ²¢¼¯
+ * å¦‚æžœoä¸­çš„å±žæ€§ä¸åœ¨pä¸­ï¼Œåˆ™åˆ é™¤oä¸­çš„å±žæ€§ï¼Œè¿”å›žo
  * */
 function restrict(o, p) {
     for(var prop in p) {
@@ -38,8 +35,7 @@ function restrict(o, p) {
 }
 
 /**
- * Èç¹ûoÖÐ´æÔÚpÖÐµÄÍ¬ÃûÊôÐÔ,ÔòÉ¾³ýÖ®,²¢·µ»Øo
- * ²î¼¯
+ * åˆ é™¤oä¸­çš„å±žæ€§åœ¨pä¸­å­˜åœ¨åŒåå±žæ€§ï¼Œè¿”å›žo
  * */
 function substract(o, p) {
     for(var prop in p) {
@@ -49,23 +45,21 @@ function substract(o, p) {
 }
 
 /**
- * ·µ»ØÒ»¸öÐÂ¶ÔÏó,¸Ã¶ÔÏóÊÇoºÍpµÄºÏ¼¯,Í¬ÃûÊôÐÔÊ¹ÓÃpÖÐµÄÖµ
- * ºÏ¼¯
+ * è¿”å›žä¸€ä¸ªæ–°å¯¹è±¡ï¼Œè¯¥å¯¹è±¡ä¸­æœ‰på’Œoçš„å±žæ€§ï¼Œå¦‚æžœpå’Œoå­˜åœ¨åŒåå±žæ€§ï¼Œä½¿ç”¨pä¸­çš„å±žæ€§Öµ
  * */
 function union(o, p) {
     return extend(extend({}, o), p);
 }
 
 /**
- * ·µ»ØÒ»¸öÐÂ¶ÔÏó,¸Ã¶ÔÏóÓµÓÐoºÍpµÄ¹²Í¬ÊôÐÔ,ÊôÐÔÖµÊ¹ÓÃoµÄ
- * ²¢¼¯
+ * è¿”å›žä¸€ä¸ªæ–°å¯¹è±¡ï¼Œè¯¥å¯¹è±¡æ‹¥æœ‰åŒæ—¶å‡ºçŽ°åœ¨oå’Œpä¸­çš„å±žæ€§ï¼Œä½¿ç”¨oä¸­çš„å±žæ€§
  * */
 function intersection(o, p) {
     return restrict(extend({}, o), p);
 }
 
 /**
- * ·µ»ØÒ»¸öÊý×é,Õâ¸öÊý×é°üº¬oÖÐ¿ÉÃ¶¾ÙµÄ×ÔÓÐÊôÐÔµÄÃû×Ö
+ * è¿”å›žä¸€ä¸ªæ•°ç»„ï¼Œè¿™ä¸ªæ•°ç»„åŒ…å«çš„æ˜¯oä¸­å¯æžšä¸¾çš„è‡ªæœ‰å±žæ€§çš„åå­—
  * */
 function keys(o) {
     if(typeof o !== 'object') throw TypeError();
