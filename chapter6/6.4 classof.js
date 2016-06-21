@@ -1,7 +1,6 @@
 /**
- * Created by Administrator on 2016/4/1.
- * ·µ»ØÈÎÒâ²ÎÊıµÄÀà
- * Ô­Ê¼µÄtoString·½·¨¿ÉÒÔµÃµ½¶ÔÏóµÄÀàÊôĞÔ,[object class],½ØÈ¡µÚ8¸öµ½µ¹ÊıµÚ2¸ö×Ö·û¾ÍÊÇ¶ÔÏóµÄÀàÊôĞÔ
+ * è¿”å›å¯¹è±¡pçš„ç±»
+ * å¯¹è±¡çš„toStringæ–¹æ³•è¿”å›â€˜[object class]â€™
  */
 function classof(p) {
     if(p === null) return 'Null';
