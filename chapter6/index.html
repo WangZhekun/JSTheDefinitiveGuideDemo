@@ -6,9 +6,18 @@
 </head>
 <body>
 <script src="6.1%20inherit.js"></script>
+<script src="6.4%20classof.js"></script>
 <script type="text/javascript">
     var obj = inherit({supper: "supper"});
     console.log("new object's supper property: " + obj.supper);
+
+    function Test() {};
+    console.log(classof(1)); // Number
+    console.log(classof(1.1)); // Number
+    console.log(classof(new Date())); // Date
+    console.log(classof([])); // Array
+    console.log(Test); // function Test() {}
+    console.log(new Test()); // Test
 </script>
 </body>
 </html>
