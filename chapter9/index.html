@@ -10,8 +10,10 @@
 <script src="9.2%20rangeByConstructedFun.js"></script>
 <script src="9.3%20complex.js"></script>
 <script src="9.4%20typeof.js"></script>
+<script src="9.5%20quacksInDockTest.js"></script>
 <script>
     // 9.1测试
+    console.log('9.1测试');
     var r = range(1, 3);
     console.log(r.includes(2));
     //r.foreach(console.log); // Illegal invocation
@@ -21,6 +23,7 @@
     console.log(r);
 
     // 9.2测试
+    console.log('9.2测试');
     var r = new Range(1, 3);
     console.log(r.includes(2));
     //r.foreach(console.log); // Illegal invocation
@@ -30,12 +33,14 @@
     console.log(r);
 
     // 9.3测试
+    console.log('9.3测试');
     var c = new Complex(2, 3);
     var d = new Complex(c.i, c.r);
     console.log(c.add(d).toString());
     console.log(Complex.parse(c.toString()).add(c.neg()).equals(Complex.ZERO));
 
     // 9.4测试
+    console.log('9.4测试');
     console.log(type(1));
     console.log(type([]));
     console.log(type(function(){}));
@@ -44,6 +49,11 @@
     var Test = function(){};
     console.log(type(new Test()));
     console.log(type(new function(){}));
+
+    // 9.5测试
+    console.log('9.5测试');
+    console.log(quacks({}, function(){}, 'aaa'));
+    console.log(quacks({}, {}, 'aaa'));
 </script>
 </body>
 </html>
