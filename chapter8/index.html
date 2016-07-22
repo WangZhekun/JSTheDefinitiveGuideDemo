@@ -8,5 +8,23 @@
 
 <script src="8.2%20functionAsValue.js"></script>
 <script src="8.3%20extend.js"></script>
+<script src="8.4%20closureToPrivatePropAccessor.js"></script>
+<script>
+    // 8.4 测试
+    var o = {};
+    addPrivateProperty(o, 'Name', function(x) {return typeof x == 'string';});
+    o.setName('Frank');
+    console.log(o.getName());
+    try{
+        o.setName(0);
+    } catch(e) {
+        console.log(e);
+    }
+
+    addPrivateProperty(o, 'Age', function(x) {return typeof  x == 'number'});
+    o.setAge(1);
+    console.log(o.getAge());
+    console.log(o.getName());
+</script>
 </body>
 </html>
