@@ -17,7 +17,7 @@ if(!Function.prototype.bind) {
         // 以便在后面嵌套的函数中使用
         // this表示函数本身，实际上var f = function(x,y) {...}等效与var f = new Function('x', 'y', '...');
         // 所以继承自Function.prototype的方法中的this指的是对象f
-        // Function.prototype.bind，相当于给每一个用function作为构造函数的类的对象增加一个bind方法
+        // Function.prototype.bind的bind是function本身的属性，注意与function作为构造函数的类的对象的方法区分
         // 而函数f中的shis指的是window
         var self = this, boundArgs = arguments;
 
