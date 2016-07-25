@@ -9,10 +9,10 @@ function Set() {
 }
 
 Set.prototype.add = function () {
-    for(var i = 0, len = arguments.length; i < len; i++) {
+    for (var i = 0, len = arguments.length; i < len; i++) {
         var val = arguments[i];
         var str = Set._v2s(val);
-        if(!this.values.hasOwnProperty(str)) {
+        if (!this.values.hasOwnProperty(str)) {
             this.values[str] = val;
             this.n++;
         }
@@ -20,10 +20,10 @@ Set.prototype.add = function () {
     return this;
 };
 
-Set.prototype.remove = function() {
+Set.prototype.remove = function () {
     for (var i = 0, len = arguments.length; i < len; i++) {
         var str = Set._v2s(arguments[i]);
-        if(this.values.hasOwnProperty(str)) {
+        if (this.values.hasOwnProperty(str)) {
             delete this.values[str];
             this.n--;
         }
@@ -32,11 +32,11 @@ Set.prototype.remove = function() {
     return this;
 };
 
-Set.prototype.contains = function(value) {
+Set.prototype.contains = function (value) {
     return this.values.hasOwnProperty(Set._v2s(value));
 };
 
-Set.prototype.size = function() {
+Set.prototype.size = function () {
     return this.n;
 };
 
@@ -45,37 +45,77 @@ Set.prototype.size = function() {
  * @param f
  * @param context
  */
-Set.prototype.foreach = function(f, context) {
-    for(var s in this.values) {
-        if(this.values.hasOwnProperty(s)) {
+Set.prototype.foreach = function (f, context) {
+    for (var s in this.values) {
+        if (this.values.hasOwnProperty(s)) {
             f.call(context, this.values[s]);
         }
     }
 };
 
 
-Set._v2s = function(val) {
+Set._v2s = function (val) {
     switch (val) {
-        case undefined: return 'u';
-        case null: return 'n';
-        case true: return 't';
-        case false: return 'f';
-        default : switch (typeof val) {
-            case 'number': return '#' + val;
-            case 'string': return '"' + val;
-            default : return'@' + objectId(val);
-        }
+        case undefined:
+            return 'u';
+        case null:
+            return 'n';
+        case true:
+            return 't';
+        case false:
+            return 'f';
+        default :
+            switch (typeof val) {
+                case 'number':
+                    return '#' + val;
+                case 'string':
+                    return '"' + val;
+                default :
+                    return '@' + objectId(val);
+            }
     }
 
     function objectId(o) {
         var prop = "|**objectid**|"; // 私有属性，用以存放id
-        if(!o.hasOwnProperty(prop)) {
+        if (!o.hasOwnProperty(prop)) {
             o[prop] = Set._v2s.next++;
         }
         return o[prop];
     }
 };
 Set._v2s.next = 100; // 设置初始id
+
+/**
+ * 在p222中给Set添加转换方法
+ * 依赖例6.2中的extend函数
+ */
+extend(Set.prototype, {
+    toString: function () {
+        var s = '{',
+            i = 0;
+        this.foreach(function (v) {
+            s += ((i++ > 0) ? ',' : '') + v;
+        });
+        return s + '}';
+    },
+    toLocaleString: function () {
+        var s = '{',
+            i = 0;
+        this.foreach(function (v) {
+            if (i++ > 0) s += ',';
+            if (v == null) s += v;
+            else s += v.toLocaleString();
+        });
+    },
+    toArray: function () {
+        var a = [];
+        this.foreach(function (v) {
+            a.push(v);
+        });
+        return a;
+    }
+});
+Set.prototype.toJSON = Set.prototype.toArray;
 
 
 
