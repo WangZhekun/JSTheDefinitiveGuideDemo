@@ -6,13 +6,17 @@
 </head>
 <body>
 <script src="../chapter6/6.1%20inherit.js"></script>
+<script src="../chapter6/6.2%20extend.js"></script>
 <script src="9.1%20simpleClass.js"></script>
 <script src="9.2%20rangeByConstructedFun.js"></script>
 <script src="9.3%20complex.js"></script>
 <script src="9.4%20typeof.js"></script>
 <script src="9.5%20quacksInDockTest.js"></script>
+<script src="9.6%20set.js"></script>
 <script src="9.7%20enumeration.js"></script>
 <script src="9.8%20card.js"></script>
+<script src="9.13%20nonNullSet.js"></script>
+<script src="9.14%20filteredSetSubclass.js"></script>
 <script>
     // 9.1测试
     console.log('9.1测试');
@@ -72,6 +76,31 @@
         console.log(x);
     });
     console.log(r);
+
+    // 9.14、9.13和9.6测试
+    console.log('9.14、9.13和9.6测试');
+    // 定义一个只保存字符串中的集合类
+    var StringSet = filteredSetSubclass(Set, function(x) { return typeof x === 'string'; });
+    try{
+        var strSet = new StringSet('one', 'two');
+        console.log(strSet);
+        strSet.add('three', 4);
+    } catch(e) {
+        console.log(e);
+    }
+    var MySet = filteredSetSubclass(NonNullSet, function(x) { return typeof x !== 'function'; });
+    try{
+        var nofunSet = new MySet(1, 'TWO');
+        console.log(nofunSet);
+        nofunSet.add(null);
+    } catch(e) {
+        console.log(e);
+    }
+    try{
+        nofunSet.add(function(){});
+    } catch(e) {
+        console.log(e);
+    }
 </script>
 </body>
 </html>
