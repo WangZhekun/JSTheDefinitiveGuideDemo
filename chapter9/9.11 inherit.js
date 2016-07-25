@@ -11,7 +11,7 @@
  */
 function defineSubClass(superclass, constructor, methods, statics) {
     // 建立子类的原型对象
-    constructor.prototype = inherit(superclass.prototype); // 这只能表示子类继承了父类的原型，子类并没有继承父类自有的方法？？？？
+    constructor.prototype = inherit(superclass.prototype); // 这只能表示子类继承了父类的原型，子类并没有继承父类构造函数中用“this.”创建的方法？？？？
     constructor.prototype.constructor = constructor;
 
     if(methods) extend(constructor.prototype, methods);
