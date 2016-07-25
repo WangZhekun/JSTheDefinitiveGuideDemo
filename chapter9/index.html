@@ -11,6 +11,8 @@
 <script src="9.3%20complex.js"></script>
 <script src="9.4%20typeof.js"></script>
 <script src="9.5%20quacksInDockTest.js"></script>
+<script src="9.7%20enumeration.js"></script>
+<script src="9.8%20card.js"></script>
 <script>
     // 9.1测试
     console.log('9.1测试');
@@ -54,6 +56,11 @@
     console.log('9.5测试');
     console.log(quacks({}, function(){}, 'aaa'));
     console.log(quacks({}, {}, 'aaa'));
+
+    // 9.7和9.8测试
+    var deck = (new Deck()).shuffle();
+    var hand = deck.deal(13).sort(Card.orderBySuit);
+    console.log(hand);
 </script>
 </body>
 </html>

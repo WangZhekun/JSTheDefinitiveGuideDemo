@@ -15,7 +15,7 @@ function enumeration(namesToValues) {
         throw 'Can\'t Instantiate Enumerations';
     };
 
-    var proto = enumeration.prototype = {
+    var proto = enumeration.prototype = { // 这里为什么要给enumeration.prototype赋值？
         constructor: enumeration,
         toString: function () {
             return this.name;
@@ -35,7 +35,7 @@ function enumeration(namesToValues) {
         e.name = name;
         e.value = namesToValues[name];
         enumeration[name] = e;
-        enumeration.values.push(e);
+        enumeration.values.push(e); // 在使用枚举对象时，values中的元素被作为变量的值时，为什么在console中显示的是enumeration，展开之后才是name和value？
     }
 
     enumeration.foreach = function (f, c) {
