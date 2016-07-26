@@ -15,8 +15,10 @@
 <script src="9.6%20set.js"></script>
 <script src="9.7%20enumeration.js"></script>
 <script src="9.8%20card.js"></script>
+<script src="9.11%20inherit.js"></script>
 <script src="9.13%20nonNullSet.js"></script>
 <script src="9.14%20filteredSetSubclass.js"></script>
+<script src="9.15%20composite.js"></script>
 <script>
     // 9.1测试
     console.log('9.1测试');
@@ -98,6 +100,17 @@
     }
     try{
         nofunSet.add(function(){});
+    } catch(e) {
+        console.log(e);
+    }
+
+    // 9.15和9.11测试
+    console.log('9.15和9.11测试');
+    var s = new FilteredSet(new Set(), function(x) {return x !== null;});
+    try{
+        s.add(1);
+        console.log(s);
+        s.add(null);
     } catch(e) {
         console.log(e);
     }
