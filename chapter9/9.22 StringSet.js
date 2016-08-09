@@ -41,5 +41,16 @@ StringSet.prototype = Object.create(AbstractWritableSet.prototype, {
             }
             return this;
         }
+    },
+    remove: {
+        value: function() {
+            for(var i = 0, len = arguments.length; i < len; i++) {
+                if(arguments[i] in this.set) {
+                    delete this.set[arguments[i]];
+                    this.n--
+                }
+            }
+            return this;
+        }
     }
 });
