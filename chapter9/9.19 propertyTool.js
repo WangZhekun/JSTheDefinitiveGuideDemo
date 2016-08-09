@@ -12,6 +12,9 @@ function freezeProps(o) {
         var desc = Object.getOwnPropertyDescriptor(o, n);
         if(!desc || !desc.configurable) return; // 忽略不可配置属性
         Object.defineProperty(o, n, {writable: false, configurable: false});
+        // Object.defineProperty 和 Object.defineProperties用来
+        // 创建新属性时，其未指定的特性默认为false；
+        // 修改属性时，未指定的特性保持原来的值
     });
     return o;
 }
@@ -26,6 +29,9 @@ function hideProps(o) {
         var desc = Object.getOwnPropertyDescriptor(o, n);
         if(!desc || !desc.configurable) return; // 忽略不可配置属性
         Object.defineProperty(o, n, {enumerable: false});
+        // Object.defineProperty 和 Object.defineProperties用来
+        // 创建新属性时，其未指定的特性默认为false；
+        // 修改属性时，未指定的特性保持原来的值
     });
     return o;
 }
