@@ -4,6 +4,7 @@
 
 /**
  * 声明全局变量Set，使用一个函数的返回值给它赋值
+ * 全局变量实际上可以认为是一个namespace
  */
 var Set = (function invocation() {
     function Set() {
@@ -35,5 +36,5 @@ var Set = (function invocation() {
     }
     var nextId = 1;
 
-    return Set;
+    return Set; // 将Set导出到全局变量中，以便别的js调用
 }());
