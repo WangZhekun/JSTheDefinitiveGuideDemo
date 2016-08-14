@@ -13,8 +13,8 @@
  */
 var browser = (function(){
     var s = window.navigator.userAgent.toLocaleLowerCase();
-    var match = /(webkit)[\/]([\w.]+)/.exec(s) ||
-        /(opera)(?:.*version)?[\/]([\w.]+)/.exec(s) ||
+    var match = /(webkit)[ \/]([\w.]+)/.exec(s) ||
+        /(opera)(?:.*version)?[ \/]([\w.]+)/.exec(s) ||
         /(msie) ([\w.]+)/.exec(s) ||
         !/compatible/.test(s) && /(mozilla)(?:.*? rv:([\w.]+))?/.exec(s) || [];
     return {name: match[1], version: match[2]};
