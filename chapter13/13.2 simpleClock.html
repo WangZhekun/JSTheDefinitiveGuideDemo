@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #clock {
+            font: bold 24pt sans;
+            background-color: #ddf;
+            padding: 10px;
+            border: solid black 2px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Digital Clock</h1>
+<span id="clock"></span>
+</body>
+<script>
+    /**
+     * 在XHTML中，\<script\>中的内容当做其他内容一样对待。如果js中包含“<”或“&”字符，那么这些字符将被解析成XML标记。
+     * 所以如果使用XHTML，那么最好将js代码放到一个CDATA中：
+     * \<script\><![CDATA[
+     *  // 这里是你的js代码
+     * ]]>\<\/script\>
+     */
+
+    function displayTime() {
+        var elt = document.getElementById('clock');
+        var date = new Date();
+        elt.innerHTML = date.toLocaleTimeString();
+        setTimeout(displayTime, 1000);
+    }
+    window.onload = displayTime;
+</script>
+</html>
