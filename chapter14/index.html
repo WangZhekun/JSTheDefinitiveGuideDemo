@@ -9,6 +9,10 @@
 </body>
 <script src="14.3%20navigator.js"></script>
 <script>
-    console.log(JSON.stringify(browser))
+    console.log(JSON.stringify(browser));
+    var p = window.showModalDialog('14.4%20showModalDialog.html',
+            ['Enter 3D point cooridnates', 'x', 'y', 'z'],
+            'dialogwidth:400; dialogheight:300; resizable:yes');
+    console.log(JSON.stringify(p))
 </script>
 </html>
