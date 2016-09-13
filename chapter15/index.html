@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<div id="test"></div>
+
+</body>
+<script src="15.10%20elementStream.js"></script>
+<script>
+    var eleSte = new ElementStream('test');
+    eleSte.write('hello         world !');
+    eleSte.writeln();
+    eleSte.writeln('hello');
+    eleSte.writeln('world');
+    eleSte.close();
+</script>
+</html>
