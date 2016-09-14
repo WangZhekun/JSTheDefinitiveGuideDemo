@@ -16,8 +16,8 @@
 function drag(elementToDrag, event) {
     // 将光标的坐标转化为文档坐标
     var scroll = getScrollOffset();
-    var startX = event.clientLeft + scroll.x;
-    var startY = event.clientTop + scroll.y;
+    var startX = event.clientX + scroll.x;
+    var startY = event.clientY + scroll.y;
 
     // 记录元素原始位置
     // elementToDrag要求是绝对定位的

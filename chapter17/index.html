@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="position: absolute;left: 100px;top: 100px;width: 250px; background: white;border: solid black;">
+    <!--通过标题拖动整个元素-->
+    <div style="background-color: gray; border-bottom: dotted black; padding: 3px; font-family: sans-serif; font-weight: bold;"
+         onmousedown="drag(this.parentNode, event)">
+        拖动我
+    </div>
+    <p>这是一个测试<br>这是一个测试</p>
+</div>
+</body>
+<script src="../chapter15/15.8%20getScrollOffset.js"></script>
+<script src="17.2%20drag.js"></script>
+</html>
